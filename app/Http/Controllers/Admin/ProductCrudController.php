@@ -19,7 +19,37 @@ class ProductCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
-    
+    private function getFieldsData($show = FALSE) {
+        return [
+            [
+                'name'=> 'title',
+                'label' => 'Title',
+                'type'=> 'text'
+            ],
+            [
+                'name' => 'content',
+                'label' => 'Content',
+                'type' => ($show ? "textarea": 'ckeditor'),
+            ],
+            [    // Select2Multiple = n-n relationship (with pivot table)
+                'label'     => "Categories",
+                'type'      => ($show ? "select": 'select2_multiple'),
+                'name'      => 'categories', // the method that defines the relationship in your Model
+// optional
+                'entity'    => 'categories', // the method that defines the relationship in your Model
+                'model'     => "App\Models\Category", // foreign key model
+                'attribute' => 'name', // foreign key attribute that is shown to user
+                'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+            ],
+            [
+                'label' => "Product Image",
+                'name' => "image",
+                'type' => 'image',
+                'crop' => true, // set to true to allow cropping, false to disable
+                'aspect_ratio' => 1, // omit or set to 0 to allow any aspect ratio
+            ]
+        ];
+    }
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
@@ -30,6 +60,8 @@ class ProductCrudController extends CrudController
         CRUD::setModel(\App\Models\Product::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/product');
         CRUD::setEntityNameStrings('product', 'products');
+
+        $this->crud->addFields($this->getFieldsData());
     }
 
     /**
@@ -46,6 +78,9 @@ class ProductCrudController extends CrudController
         CRUD::column('created_at');
         CRUD::column('updated_at');
 
+
+        $this->crud->set('show.setFromDb', false);
+        $this->crud->addColumns($this->getFieldsData(TRUE));
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -86,4 +121,13 @@ class ProductCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+
+    protected function setupShowOperation()
+{
+    // by default the Show operation will try to show all columns in the db table,
+    // but we can easily take over, and have full control of what columns are shown,
+    // by changing this config for the Show operation
+    $this->crud->set('show.setFromDb', false);
+    $this->crud->addColumns($this->getFieldsData(TRUE));
+}
 }
