@@ -5,7 +5,7 @@
         <li class="first">
             <p>
                 <a href="{{ url('products/'.$product->id) }}">
-                    <img style="width:2rem;height:3rem" src="{{$product->image}}" alt="Product"> {{$product->title}} {{$product->date}}
+                    <img style="width:2rem;height:3rem" src="{{$product->image}}" alt="Product"> {{$product->title}} 
                 </a>
             </p>
         </li>

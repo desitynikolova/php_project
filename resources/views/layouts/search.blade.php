@@ -9,20 +9,12 @@
             <div class="offset-4">
                 <div>
                     <button id="buttonTitle" class="active" onclick="showTitle()">Title of Product</button>
-                    <button id="buttonDate" class="element" onclick="showDate()">Date</button>
                     <button id="buttonCategory" class="element" onclick="showCategory()">Category</button>
                 </div>
                 <div class="searchWrapper" id="searchTitle">
                     <form action="{{ route('search-title') }}" method="GET" class="d-inline align-items-start">
                         <input class="input-group-text d-inline bgRed" style="width: 40rem" type="text" name="search-title" placeholder="Title:" required/>
                         <button  class="btn textRed my-3" type="submit" >Search by Title</button>
-                    </form>
-                </div>
-
-                <div class="searchWrapper" id="searchDate" style="display: none">
-                    <form action="{{ route('search-date') }}" method="GET" class="d-inline align-items-start">
-                        <input class="input-group-text d-inline bgRed" style="width: 40rem" type="date" name="search-date" required/>
-                        <button  class="btn textRed my-3" type="submit" >Search by Date</button>
                     </form>
                 </div>
 

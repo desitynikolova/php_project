@@ -47,18 +47,6 @@ class ProductController extends BaseController
         return view('layouts.partials.products.current-product', compact('product','categories'));
     }
 
-    public function searchByDate(Request $request){
-        // Get the search value from the request
-        $search = $request->input('search-date');
-
-        // Search in the title and body columns from the posts table
-        $products = Product::query()
-            ->where('date', 'LIKE', "%{$search}%")
-            ->get();
-
-        // Return the search view with the resluts compacted
-        return view('layouts/product', compact('products'));
-    }
 
     public function searchByTitle(Request $request){
         // Get the search value from the request

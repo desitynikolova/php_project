@@ -12,7 +12,6 @@
                             <div class="card box-shadow  d-flex bg-danger">
                                 <img style="width:30rem;height:25rem" src="{{$product->image}}" alt="Image">
                                 <p class="card-text text-white h5 p-2">Title: {{$product->title}}</p>
-                                <p class="card-text text-white h5 p-2">Release Date: {{$product->date}}</p>
                                 <div class="d-flex justify-content-center align-items-center pb-3">
                                     <a class="btn btn-white bg-white text-danger" href="{{ url('products/'.$product->id) }}"> View More</a>
                                 </div>

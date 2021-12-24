@@ -4,10 +4,9 @@
         <div class="card box-shadow  d-flex bg-danger">
             <img style="width:30rem;height:25rem" src="{{$product->image}}" alt="Image">
             <p class="card-text text-white h5 p-2">Title: {{$product->title}}</p>
-            <p class="card-text text-white h5 p-2">Release Date: {{$product->date}}</p>
             @if(!empty($categories))
             <p class="card-text text-white h5 p-2">
-                Category:
+            Category:
                 <br>
                 @include('layouts.partials.products.current-product-categories')
             </p>
