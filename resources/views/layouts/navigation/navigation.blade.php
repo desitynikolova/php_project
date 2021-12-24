@@ -3,8 +3,8 @@
         <div id="header">
             <div id="logo">
                 <h1>
-                <a href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.png') }}" style="width:4rem;height:2rem" class="margin-bottom:1rem">
+                <img src="{{ asset('images/logo.png') }}" style="width:3rem;height:3rem;margin-right:10px;">
+                <a href="{{ url('/') }}"> 
                     Products Project
                 </a>
                 </h1>
