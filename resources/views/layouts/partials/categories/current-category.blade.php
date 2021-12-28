@@ -1,7 +1,7 @@
 @extends('layouts.navigation.template-current')
 @section('content')
     <div class="d-flex justify-content-center">
-        <div class="card box-shadow  d-flex bg-danger">
+        <div style="background: gray; border: 2px solid black;">
             <p class="card-text text-white h5 p-2">Name: {{$category->name}}</p>
             @if(!empty($products))
             <p class="card-text text-white h5 p-2">

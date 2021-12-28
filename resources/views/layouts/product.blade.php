@@ -9,7 +9,7 @@
 					<section class="row">
                         @foreach($products->reverse() as $product)
                         <div class="d-flex justify-content-center col-lg-12 col-xl-6 py-3">
-                            <div class="card box-shadow  d-flex bg-danger">
+                            <div style="background: gray; border: 2px solid black;">
                                 <img style="width:30rem;height:25rem" src="{{$product->image}}" alt="Image">
                                 <p class="card-text text-white h5 p-2">Title: {{$product->title}}</p>
                                 <div class="d-flex justify-content-center align-items-center pb-3">

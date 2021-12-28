@@ -1,5 +1,5 @@
 @foreach($categories as $category)
     @foreach($category as $currentCategory)
-        Name: {{$currentCategory['name']}} <br>
+     {{$currentCategory['name']}} 
     @endforeach
 @endforeach

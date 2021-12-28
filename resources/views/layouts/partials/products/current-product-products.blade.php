@@ -1,8 +1,8 @@
 @foreach($products as $product)
     @foreach($product as $currentProduct)
-        <div class="px-1 bg-white text-danger mx-1">
-        <p class="d-flex">Title: {{$currentProduct['title']}}</P>
-        <img style="width:15rem;height:15rem" src="{{$currentProduct['image']}}" alt="Image">
+        <div style="border: 1px solid gray;">
+        <p class="d-flex">Title: {{$currentProduct['title']}}</p>
+        <img style="width:15rem;height:15rem" src="{{asset($currentProduct['image'])}}" alt="Image" />
         </div>
     @endforeach
 @endforeach
