@@ -11,5 +11,5 @@
         </li>
         @endforeach
     </ul>
-    <p><a href="{{ url('products') }}" class="button" style="background: #282f39; border: none;"><span style="box-shadow: 2px 2px black;">View All Products</span></a></p>
+    <p><a href="{{ url('products') }}" class="button" style="background: #718c7b; border: none;"><span style="box-shadow: 2px 2px black;">View All Products</span></a></p>
 </section>
