@@ -6,8 +6,8 @@
 
 MODELS:
 Имам създадени 4 модела: 
-Category /n
-Product_categories /n
+Category 
+Product_categories 
 Product
 User
 
