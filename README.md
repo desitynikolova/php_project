@@ -5,6 +5,7 @@
 Имам търсачка като чрез нея хората могат да търсят по дадена категория, например Тениски и ще им излязат добавените тениски. Също така има възможност по дата на публикация да се търси, като така потребителят ще намери по-скорошни продукти. Може да се търси и по име на продукт, като например ако имаме добавена червена рокля, той като напише рокля или червена съответно ще му излезе тази рокля. 
 <br>
 MODELS:
+<br>
 Имам създадени 4 модела: 
 Category
 <br>
@@ -13,11 +14,12 @@ Product_categories
 Product
 <br>
 User
-
 <br>
 <br>
 CONTROLLERS:
+<br>
 В папката app -> Http -> Controllers -> Admin, където е и логиката за CRUD операциите, чрез които можем да създаваме, редактираме, ъпдейтваме и изтриваме дадените продукти и категории имам следните контролери: 
+<br>
 CategoryCrudController
 <br>
 Product_categoriesCrudController
@@ -27,6 +29,7 @@ ProductCrudController
 UserCrudController
 <br>
 Освен тези контролери имам и извън папката админ:
+<br>
 CategoryController
 <br>
 Controller 
@@ -41,12 +44,16 @@ ProductController
 <br>
 <br>
 VIEWS:
+<br>
 Те се намират в recources -> views 
 Изгледа за моята начална страница на проекта се намира в home.blade.php. 
 Имам си отделни папки съответно за всеки изглед. В папка navigation съм добавила файлове с изгледите за навигацията. В папка partials имам подпапки за категориите и за продуктите. 
 В папката categories имам следните файлове:
+<br>
 current-category.blade.php 
+<br>
 В папката products имам следните файлове:
+<br>
 current-product-categories.blade.php
 <br>
 current-product-products.blade.php
@@ -54,6 +61,7 @@ current-product-products.blade.php
 current-product.blade.php 
 <br>
 За страниците, които са ми начални за продукти, категории и за търсенето по дадени критерии имам следните вюта, които съм оформяла с малко CSS извън добавената тема:
+<br>
 category.blade.php
 <br>
 product.blade.php
@@ -61,9 +69,11 @@ product.blade.php
 search.blade.php
 <br>
 <br>
-Routes
+Routes:
+<br>
 Описани са в web.php, който файл се намира в routes->web.php
-
+<br>
+<br>
 Визуално изглеждаш сайта ми:
 Това е главната ми страница:
 ![image](https://user-images.githubusercontent.com/57368045/149376516-95183713-81d2-46a4-a3e4-5e0d3c892d33.png)
